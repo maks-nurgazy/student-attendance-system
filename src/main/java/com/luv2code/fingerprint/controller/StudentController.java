@@ -1,5 +1,6 @@
 package com.luv2code.fingerprint.controller;
 
+import com.luv2code.fingerprint.entity.ContactDetails;
 import com.luv2code.fingerprint.entity.PersonalDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,13 +18,16 @@ public class StudentController {
 	public String sayHello(Model theModel) {
 
 		theModel.addAttribute("personal", new PersonalDetails());
+		theModel.addAttribute("contact", new ContactDetails());
 		return "register-user";
 	}
 
 	@GetMapping("/save")
-	public String save(@ModelAttribute("personal")PersonalDetails personalDetails){
+	public String save(@ModelAttribute("personal")PersonalDetails personalDetails,
+					   @ModelAttribute("contact")ContactDetails contactDetails){
 
 		System.out.println(personalDetails);
+		System.out.println(contactDetails);
 
 		return "saved";
 	}
