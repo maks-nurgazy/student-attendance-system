@@ -21,18 +21,13 @@
 		  th:href="@{/css/demo.css}" />
 	<link rel="stylesheet"
 		  th:href="@{/css/demo1.css}" />
-	<style>
-		img {
-			width: 50%;
-		}
-	</style>
-	
 </head>
 
 <body>
 
 <div class="container mt-5">
-	<form action="/student/save" method="get">
+	<form action="#" th:action="@{/student/save}"
+		th:object="${personal}" method="get">
 		<div class="row">
 			<div class="col-sm">
 				<div class="card">
@@ -43,19 +38,19 @@
 						<!-- Default input -->
 						<div class="form-group">
 							<label for="first-name">First Name</label>
-							<input class="form-control" id="first-name" placeholder="Enter first name" type="text">
+							<input class="form-control" id="first-name" placeholder="Enter first name" type="text" th:field="*{firstName}">
 						</div>
 						<div class="form-group">
 							<label for="last-name">Last Name</label>
-							<input class="form-control" id="last-name" placeholder="Enter last name" type="text">
+							<input class="form-control" id="last-name" placeholder="Enter last name" type="text" th:field="*{lastName}">
 						</div>
 						<div class="form-group">
 							<label for="roll-number">Roll Number</label>
-							<input class="form-control" id="roll-number" placeholder="Enter roll number" type="text">
+							<input class="form-control" id="roll-number" placeholder="Enter roll number" type="text" th:field="*{rollNumber}">
 						</div>
 						<div class="file-field">
 							<div class="z-depth-1-half mb-4">
-								<img alt="example placeholder"
+								<img alt="example placeholder" id="user-image"
 									 class="img-fluid w-50"
 									 src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg">
 							</div>

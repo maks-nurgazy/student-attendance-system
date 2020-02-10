@@ -4,3 +4,6 @@
 .avatar-pic {
 	width: 150px;
 }
+#user-image{
+	width: 50% !important;
+}
